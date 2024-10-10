@@ -1,0 +1,16 @@
+<div class="grid">
+  <div *ngFor="let row of grid; let x = index">
+    <div *ngFor="let cell of row; let y = index" class="cell" (click)="onCellClick(x, y)">
+      {{ getCellDisplay(x, y) }}
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="statusMessage">
+  <span>  Fire : {{status}}</span>
+  <br>
+  <span *ngIf="notification != ''">Game Status: {{notification}}</span>
+</div>
+<br>
+<button (click)="ResetGame()">Reset Game</button>
